@@ -1,0 +1,69 @@
+Given a Binary Search Tree (BST) T in Parenthesis Representation. Write a program that
+implements the following functions:
+
+• Main() - Creates the Binary Search Tree T given in the Parenthesis Representation
+and repeatedly reads a character ‘r’, ‘u’, ‘i’, ‘l’, ‘s’ or ‘e’ from the console and calls the
+sub-functions appropriately until character ‘e’ is entered.
+• Predecessor(T, k) - Searches for a node with key k in T, and returns a pointer to a node
+which is predecessor of the node with key k if one exists; otherwise, it returns NIL.
+• Successor(T, k) - Searches for a node with key k in T, and returns a pointer to a node which
+is successor of the node with key k if one exists; otherwise, it returns NIL.
+• Inorder(T) - Performs recursive inorder traversal of the BST T and prints the data in the
+nodes of T in inorder.
+• Klargest(T, k)- Returns the K-th largest value in the BST T.
+• Ksmallest(T, k)- Returns the K-th smallest value in the BST T.
+
+
+Note: Each node of the BST is of the following type:
+struct node {
+int data;
+struct node *leftChild;
+struct node *rightChild;
+};
+
+
+Input format:
+• The integers, if given, are in the range [−106
+, 106
+].
+• First line of the input contains space separated Parenthesis Representation of the tree T
+• Subsequent lines may contain a character from ‘r’, ‘u’, ‘i’, ‘l’ or ‘s’ followed by at most one
+integer.
+– r x: find the predecessor of the node with the integer x as key in T.
+– u x: find the successor of the node with the integer x as key in T.
+– i: print the inorder traversal of T.
+– l k: find the node with kth largest value in T.
+– s k: find the node with kth smallest value in T.
+• Character ‘e’ is to ‘exit’ from the program.
+
+
+
+Output Format:
+• The output (if any) of each command should be printed on a separate line.
+• For option ‘r’, if the key is present in T, then print its predecessor. If key is not present in T,
+then print -1.
+• For option ‘u’, if the key is present in T, then print its successor. If key is not present in T,
+then print -1.
+• For option ‘i’, print the data in the nodes of T obtained from inorder traversal.
+• For option ‘l’, if the k-th largest value is present in T, then print it. If it is not present in T,
+then print -1.
+• For option ‘s’, if the k-th smallest value is present in T, then print it. If it is not present in
+T, then print -1.
+
+
+Sample Input :
+( 25 ( 13 ( ) ( 18 ( )( ) ) ) ( 50 ( 45 ( ) ( ) ) ( 55 ( ) ( ) ) ) )
+r 25
+u 30
+u 25
+i
+s 5
+l 3
+e
+Sample Output :
+18
+-1
+45
+13 18 25 45 50 55
+50
+45
